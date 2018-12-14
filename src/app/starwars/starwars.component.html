@@ -1,0 +1,60 @@
+<div *ngIf="peliculaSelect;" class="card">
+  <div class="card-body">
+    <h2 class="card-title thead-dark">Detalle Pelicula</h2>
+    <div class="card-text">
+      <h3>Opening: {{peliculaSelect.titulo}}</h3>
+      <h3>Director: {{peliculaSelect.autor}}</h3>
+      <h3>Producer: {{peliculaSelect.copias}}</h3>
+     </div>
+     <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Heigt</th>
+              <th scope="col">Eye_Color</th>
+              <th scope="col">Gender</th>
+              
+            </tr>
+          </thead>
+
+     </table>
+
+</div>
+</div>
+
+
+
+
+<br>
+<div>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Star Wars Wiki</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </nav>
+  <br>
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Episodio</th>
+        <th scope="col">Release Date</th>
+        <th scope="col">Detalle</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ='let detalle of startwars'[class.selected]="detalle === peliculaSelect" (click)="onSelect(detalle)">
+       
+        <td>{{detalle.title}}</td>
+        <td>{{detalle.episode_id}}</td>
+        <td>{{detalle.release_date}}</td>
+        <td><button class="btn btn-alert">Detalle</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</div>
